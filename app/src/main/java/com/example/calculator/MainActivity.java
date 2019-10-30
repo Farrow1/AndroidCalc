@@ -104,11 +104,59 @@ public class MainActivity extends AppCompatActivity {
                 edit1.setText(edit1.getText() + ".");
             }
         });
+        btn_clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                edit1.setText("");
+            }
+        });
         btn_Add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Value1 = edit1.getText();
+                Value1 = Float.valueOf(edit1.getText().toString());
+                edit1.setText("");
+                add = true;
             }
         });
+        btn_Sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Value1 = Float.valueOf(edit1.getText().toString());
+                edit1.setText("");
+                sub= true;
+            }
+        });
+        btn_Mul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Value1 = Float.valueOf(edit1.getText().toString());
+                edit1.setText("");
+                mul = true;
+            }
+        });
+        btn_Div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Value1 = Float.valueOf(edit1.getText().toString());
+                edit1.setText("");
+                div = true;
+            }
+        });
+        btn_equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Value2 = Float.valueOf(edit1.getText().toString());
+                if(add == true)
+                   edit1.setText(Float.toString(Value1 + Value2));
+                if(sub == true)
+                    edit1.setText(Float.toString(Value1 - Value2));
+                if(mul == true)
+                    edit1.setText(Float.toString(Value1 * Value2));
+                if(div == true)
+                    edit1.setText(Float.toString(Value1 / Value2));
+
+            }
+        });
+
     }
 }
